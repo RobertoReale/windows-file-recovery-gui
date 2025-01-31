@@ -83,7 +83,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Based on Microsoft's [Windows File Recovery](https://support.microsoft.com/en-us/windows/recover-lost-files-on-windows-61f5b28a-f5b8-3cc2-0f8e-a63cb4e1d4c4) tool
-- Thanks to all contributors and users of this project
 
 ## Disclaimer
 
