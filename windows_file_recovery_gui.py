@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext, filedialog
 import subprocess
-import os
 import win32api
 import ctypes
 
@@ -250,12 +249,9 @@ Best Practices:
 
     def is_admin(self):
         try:
-            return os.getuid() == 0
-        except AttributeError:
-            try:
-                return ctypes.windll.shell32.IsUserAnAdmin()
-            except:
-                return False
+            return ctypes.windll.shell32.IsUserAnAdmin()
+        except Exception:
+            return False
 
 def main():
     root = tk.Tk()
