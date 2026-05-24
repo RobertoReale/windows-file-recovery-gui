@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox, scrolledtext, filedialog
 import subprocess
+import shutil
 import win32api
 import ctypes
 
@@ -31,6 +32,15 @@ class WindowsFileRecoveryGUI:
         self.status_var = tk.StringVar()
         self.status_bar = ttk.Label(root, textvariable=self.status_var, relief=tk.SUNKEN)
         self.status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+
+        if not shutil.which("winfr"):
+            messagebox.showwarning(
+                "Windows File Recovery not found",
+                "The 'winfr' tool was not found on this system.\n\n"
+                "Please install Windows File Recovery from the Microsoft Store "
+                "before using this application.\n\n"
+                "Search for 'Windows File Recovery' in the Microsoft Store app."
+            )
 
     def setup_recovery_interface(self):
         # Drive Selection Frame
