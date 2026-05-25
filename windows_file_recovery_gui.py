@@ -71,10 +71,8 @@ class WindowsFileRecoveryGUI:
         
         ttk.Radiobutton(mode_frame, text="Regular Mode - For recently deleted files on NTFS drives", 
                        variable=self.recovery_mode, value="regular").pack(anchor=tk.W)
-        ttk.Radiobutton(mode_frame, text="Extensive Mode - For older deleted files or formatted drives", 
+        ttk.Radiobutton(mode_frame, text="Extensive Mode - For older deleted files or formatted drives",
                        variable=self.recovery_mode, value="extensive").pack(anchor=tk.W)
-        ttk.Radiobutton(mode_frame, text="Segment Mode - For NTFS drives using file record segments", 
-                       variable=self.recovery_mode, value="segment").pack(anchor=tk.W)
 
         # File Options Frame
         file_frame = ttk.LabelFrame(self.main_tab, text="Step 3: Specify File Details (Optional)", padding="10")
@@ -123,8 +121,8 @@ Important Notes:
 - To increase recovery chances, minimize computer usage after file deletion
 
 File System Support:
-- NTFS: Most Windows computers (Regular, Extensive, and Segment modes supported)
-- FAT and exFAT: USB drives < 4GB (Extensive mode only)
+- NTFS: Most Windows computers (Regular and Extensive modes supported)
+- FAT, exFAT, and ReFS (Extensive mode only)
 
 When to Use Each Mode:
 1. Regular Mode:
@@ -137,11 +135,6 @@ When to Use Each Mode:
    - Works with all file systems
    - Use after formatting a drive
    - More thorough but slower
-
-3. Segment Mode:
-   - Specifically for NTFS drives
-   - Uses file record segments
-   - Good for recovering specific file types
 
 Best Practices:
 - Always recover to a different drive than the source
